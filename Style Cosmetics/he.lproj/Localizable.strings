@@ -1,0 +1,53 @@
+/* 
+  Localizable.strings
+  Style Cosmetics
+
+  Created by Tariq on 8/20/19.
+  Copyright © 2019 user. All rights reserved.
+*/
+
+"Empty Fields" = "שדות ריקים";
+"login successfully" = "התחברות בהצלחה";
+"Email or Password incorrect" = "אימייל או סיסמא שגויים";
+"Message" = "הודעה";
+"Dismiss" = "לשחרר";
+"sign up successfully" = "להירשם בהצלחה";
+"Check your entered data" = "בדוק את הנתונים שהזנת";
+"Error" = "שגיאה";
+"cart" = "עגלה";
+"Please Login First" = "בבקשה התחבר קודם";
+"Cancel" = "לבטל";
+"Login" = "התחברות";
+"Select Language" = "בחר שפה";
+"Products" = "מוצרים";
+"Reviews" = "ביקורות";
+"Please Select Color" = "אנא בחר צבע";
+"Ok" = "בסדר";
+"Total Price:" = "מחיר סופי:";
+"Taxes:" = "מיסים:";
+"Delevery Fees:" = "דמי משלוח:";
+"My Orders" = "ההזמנות שלי";
+"Order in Progress" = "סדר בתהליך";
+"Order Delevered" = "ההזמנה הועברה";
+"Order Canceled" = "ההזמנה בוטלה";
+"Cash on Delevered" = "מזומנים שנמסרו";
+"Very Bad" = "רע מאוד";
+"Bad" = "רע";
+"Good" = "טוב";
+"Very Good" = "טוב מאוד";
+"Exellent" = "מעולה";
+"Please write Comment" = "אנא כתוב תגובה";
+"Edit Full Name" = "ערוך את השם המלא";
+"Change Full Name" = "שנה את השם המלא";
+"Edit" = "ערוך";
+"Edit Phone Number" = "ערוך את מספר הטלפון";
+"Change Phone Number" = "שנה את מספר הטלפון";
+"Edit Email" = "ערוך דוא\"ל";
+"Change Email" = "שנה כתובת אימייל";
+"Edit Password" = "ערוך סיסמא";
+"Change Password" = "שנה סיסמא";
+"Latest Products" = "המוצרים החדישים";
+"Feature Products" = "מוצרי תכונה";
+"complete your order" = "השלם את ההזמנה שלך";
+"Price:" = "מחיר:";
+"order:" = "להזמין:";

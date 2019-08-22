@@ -1,0 +1,6 @@
+/* Bundle name */
+"CFBundleName" = "Style Cosmetics";
+/* Privacy - Location Always and When In Use Usage Description */
+"NSLocationAlwaysAndWhenInUseUsageDescription" = "The app needs your location to detect your address";
+/* Privacy - Location When In Use Usage Description */
+"NSLocationWhenInUseUsageDescription" = "The app needs your location to detect your address";
