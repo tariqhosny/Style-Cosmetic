@@ -14,7 +14,7 @@ class productsApi: NSObject {
 
     class func catigoriesApi (url:String,completion: @escaping(_ error: Error?, _ photos: [productsModel]?)-> Void){
         let parametars = [
-            "lang": "en"
+            "lang": NSLocalizedString("en", comment: "")
         ]
         Alamofire.request(url, method: .post, parameters: parametars, encoding: URLEncoding.default, headers: nil).responseJSON { response in
             
@@ -44,11 +44,46 @@ class productsApi: NSObject {
         }
     }
     
-    class func productApi (catID:Int, brandID:Int, completion: @escaping(_ error: Error?, _ photos: [productsModel]?)-> Void){
+    class func productBrandApi (brandID:Int, completion: @escaping(_ error: Error?, _ photos: [productsModel]?)-> Void){
+        let parametars = [
+            "brand_id": brandID,
+            "lang": NSLocalizedString("en", comment: "")
+            ] as [String : Any]
+        let header = [
+            "Accept": "application/json",
+            "Authorization": "Bearer \(helper.getUserToken() ?? "")"
+        ]
+        Alamofire.request(URLs.products, method: .post, parameters: parametars, encoding: URLEncoding.default, headers: header).responseJSON { response in
+            switch response.result
+            {
+            case .failure(let error):
+                print(error)
+                completion(error, nil)
+                
+            case .success(let value):
+                let json = JSON(value)
+                print(json)
+                
+                guard let data = json["data"].array else {
+                    completion(nil, nil)
+                    return
+                }
+                //print(data)
+                var photos = [productsModel]()
+                data.forEach({
+                    if let dict = $0.dictionary, let photo = productsModel(dict: dict) {
+                        photos.append(photo)
+                    }
+                })
+                completion(nil, photos)
+            }
+        }
+    }
+    
+    class func productApi (catID:Int, completion: @escaping(_ error: Error?, _ photos: [productsModel]?)-> Void){
         let parametars = [
             "category_id": catID,
-            "brand_id": brandID,
-            "lang": "en"
+            "lang": NSLocalizedString("en", comment: "")
             ] as [String : Any]
         let header = [
             "Accept": "application/json",
@@ -80,6 +115,7 @@ class productsApi: NSObject {
             }
         }
     }
+    
     class func productImagesApi (id: Int, completion: @escaping(_ error: Error?, _ photos: [productsModel]?)-> Void){
         let parametars = [
             "product_id": id

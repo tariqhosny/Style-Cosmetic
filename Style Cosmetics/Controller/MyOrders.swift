@@ -49,6 +49,7 @@ class MyOrders: UIViewController {
     @objc fileprivate func OrderListHandleRefresh() {
         self.activityIndicator.isHidden = false
         self.activityIndicator.startAnimating()
+        self.products.removeAll()
         orderApi.orderListApi { (error: Error?, orderList: [productsModel]?) in
             if let products = orderList {
                 self.products = products
@@ -94,7 +95,7 @@ extension MyOrders : UITableViewDelegate, UITableViewDataSource{
             self.orderState = NSLocalizedString("Order in Progress", comment: "")
         }
         if Int(products[indexPath.item].orderState) == 1{
-            self.orderState = NSLocalizedString("Order Delevered", comment: "")
+            self.orderState = NSLocalizedString("Order Delivered", comment: "")
         }
         if Int(products[indexPath.item].orderState) == 2{
             self.orderState = NSLocalizedString("Order Canceled", comment: "")

@@ -50,7 +50,7 @@ class Cart: UIViewController {
                 self.price = price ?? 0
                 self.totalPrice.text = NSLocalizedString("Total Price:", comment: "") + " $\(price ?? 0)"
                 self.taxs.text = NSLocalizedString("Taxes:", comment: "") + " $\(taxs ?? 0)"
-                self.deleveryFees.text = NSLocalizedString("Delevery Fees:", comment: "") + " $\(deleveryFees ?? "0")"
+                self.deleveryFees.text = NSLocalizedString("Delivery Fees:", comment: "") + " $\(deleveryFees ?? "0")"
                 self.tableView.reloadData()
             }
         }
@@ -126,7 +126,7 @@ extension Cart : UITableViewDelegate, UITableViewDataSource{
                 self.products.removeAll()
                 self.totalPrice.text = NSLocalizedString("Total Price: ", comment: "") + " $0"
                 self.taxs.text = NSLocalizedString("Taxes: ", comment: "") + " $0"
-                self.deleveryFees.text = NSLocalizedString("Delevery Fees: ", comment: "") + " $0"
+                self.deleveryFees.text = NSLocalizedString("Delivery Fees: ", comment: "") + " $0"
                 self.tableView.reloadData()
             }
         }

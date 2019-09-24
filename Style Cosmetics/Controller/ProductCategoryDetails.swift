@@ -18,6 +18,7 @@ class ProductCategoryDetails: UIViewController {
     var productDescription = String()
     var productShortDescription = String()
     var productPrice = String()
+    var productGeneralPrice = String()
     var productTitle = String()
     var productID = Int()
     var isFavorite = Int()
@@ -25,6 +26,10 @@ class ProductCategoryDetails: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        print(catId)
+        print(brandId)
+        
         productsHandleRefresh()
 
         collectionView.dataSource = self
@@ -36,7 +41,7 @@ class ProductCategoryDetails: UIViewController {
         self.navigationController?.navigationBar.isTranslucent = true
         self.navigationController?.view.backgroundColor = .clear
         self.navigationController?.navigationBar.barTintColor = UIColor.gray
-        self.navigationController?.navigationBar.topItem?.title = ""
+        self.navigationController?.navigationBar.topItem?.title = NSLocalizedString("Products", comment: "")
         
     }
     
@@ -45,10 +50,19 @@ class ProductCategoryDetails: UIViewController {
     }
     
     @objc fileprivate func productsHandleRefresh() {
-        productsApi.productApi(catID: catId, brandID: brandId) { (error: Error?, product: [productsModel]?) in
-            if let products = product {
-                self.products = products
-                self.collectionView.reloadData()
+        if self.brandId == 0 {
+            productsApi.productApi(catID: catId) { (error: Error?, product: [productsModel]?) in
+                if let products = product {
+                    self.products = products
+                    self.collectionView.reloadData()
+                }
+            }
+        }else{
+            productsApi.productBrandApi(brandID: brandId) { (error: Error?, product: [productsModel]?) in
+                if let products = product {
+                    self.products = products
+                    self.collectionView.reloadData()
+                }
             }
         }
     }
@@ -58,6 +72,7 @@ class ProductCategoryDetails: UIViewController {
             destenation.productDescription = self.productDescription
             destenation.productShortDescription = self.productShortDescription
             destenation.productPrice = self.productPrice
+            destenation.productGeneralPrice = self.productGeneralPrice
             destenation.productTitle = self.productTitle
             destenation.productID = self.productID
             destenation.isFavorite = self.isFavorite
@@ -84,6 +99,7 @@ extension ProductCategoryDetails: UICollectionViewDelegate, UICollectionViewData
         self.productDescription = products[indexPath.item].shortDescription
         self.productShortDescription = products[indexPath.item].productDescription
         self.productPrice = products[indexPath.item].price
+        self.productGeneralPrice = products[indexPath.item].salePrice
         self.productTitle = products[indexPath.item].title
         self.productID = products[indexPath.item].id
         self.isFavorite = products[indexPath.item].isFavorite

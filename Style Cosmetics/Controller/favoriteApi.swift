@@ -15,7 +15,7 @@ class favoriteApi: NSObject {
     class func setFavoriteApi (product_id: Int, completion: @escaping(_ error: Error?, _ status: Bool?, _ error: String?)-> Void){
         let parametars = [
             "product_id": product_id,
-            "lang": "en"
+            "lang": NSLocalizedString("en", comment: "")
             ] as [String : Any]
         let header = [
             "Accept": "application/json",
@@ -49,7 +49,7 @@ class favoriteApi: NSObject {
 
     class func favoriteListApi (completion: @escaping(_ error: Error?, _ photos: [productsModel]?)-> Void){
         let parametars = [
-            "lang": "en"
+            "lang": NSLocalizedString("en", comment: "")
         ]
         let header = [
             "Accept": "application/json",

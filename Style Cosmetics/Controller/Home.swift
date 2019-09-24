@@ -14,26 +14,32 @@ class Home: UIViewController {
     @IBOutlet weak var serviceCollectionView: UICollectionView!
     @IBOutlet weak var productCollectionView: UICollectionView!
     @IBOutlet weak var pageControl: UIPageControl!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     var slider = [sliderModel]()
     var latestProduct = [productsModel]()
     var featureProduct = [productsModel]()
-    var productDescription = String()
+    var cart = [productsModel]()
     var productShortDescription = String()
+    var productDescription = String()
     var productPrice = String()
+    var productGeneralPrice = String()
     var productTitle = String()
     var productID = Int()
     var isFavorite = Int()
     var rate = Double()
-    var currentIndex = 0
-    var timer : Timer?
+    var timer = Timer()
+    var counter = 0
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        activityIndicator.isHidden = true
         
-        sliderHandleRefresh()
+        cartCounter()
         latestHandleRefresh()
+        sliderHandleRefresh()
         featureHandleRefresh()
         startTimer()
         
@@ -58,36 +64,17 @@ class Home: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        cartCounter()
         sliderHandleRefresh()
         latestHandleRefresh()
         featureHandleRefresh()
         self.navigationController?.navigationBar.topItem?.title = ""
-        
     }
     
     func startTimer(){
         DispatchQueue.main.async {
-            self.timer = Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(self.timerAction), userInfo: nil, repeats: true)
+            self.timer = Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(self.changeImage), userInfo: nil, repeats: true)
         }
-    }
-    
-    @objc func timerAction(){
-        
-        let desiredScrollPosition = (currentIndex < slider.count - 1) ? currentIndex + 1 : 0
-        topCollectionView.scrollToItem(at: IndexPath(item: desiredScrollPosition, section: 0), at: .centeredHorizontally, animated: true)
-        
-//        if currentIndex < slider.count {
-//            let index = IndexPath.init(item: currentIndex, section: 0)
-//            self.topCollectionView.scrollToItem(at: index, at: .centeredHorizontally, animated: true)
-//            pageControl.currentPage = currentIndex
-//            currentIndex += 1
-//        } else {
-//            currentIndex = 0
-//            let index = IndexPath.init(item: currentIndex, section: 0)
-//            self.topCollectionView.scrollToItem(at: index, at: .centeredHorizontally, animated: false)
-//            pageControl.currentPage = currentIndex
-//            currentIndex = 1
-//        }
     }
 
     @objc fileprivate func sliderHandleRefresh() {
@@ -95,17 +82,41 @@ class Home: UIViewController {
             if let photos = photos {
                 self.slider = photos
                 self.pageControl.numberOfPages = self.slider.count
+                self.pageControl.currentPage = 0
                 self.topCollectionView.reloadData()
             }
         }
     }
     
+    
+    @objc func changeImage() {
+        
+        if counter < slider.count {
+            let index = IndexPath.init(item: counter, section: 0)
+            self.topCollectionView.scrollToItem(at: index, at: .centeredHorizontally, animated: true)
+            pageControl.currentPage = counter
+            counter += 1
+        } else {
+            counter = 0
+            let index = IndexPath.init(item: counter, section: 0)
+            self.topCollectionView.scrollToItem(at: index, at: .centeredHorizontally, animated: false)
+            pageControl.currentPage = counter
+            counter = 1
+        }
+        
+    }
+    
     @objc fileprivate func latestHandleRefresh() {
+        self.activityIndicator.isHidden = false
+        self.activityIndicator.startAnimating()
         homeApi.latestProducts { (error: Error?, photo: [productsModel]?) in
             if let photos = photo {
                 self.latestProduct = photos
                 self.serviceCollectionView.reloadData()
+                self.activityIndicator.stopAnimating()
+                self.activityIndicator.isHidden = true
             }
+            self.addBadge()
         }
     }
     
@@ -123,6 +134,7 @@ class Home: UIViewController {
             destenation.productDescription = self.productDescription
             destenation.productShortDescription = self.productShortDescription
             destenation.productPrice = self.productPrice
+            destenation.productGeneralPrice = self.productGeneralPrice
             destenation.productTitle = self.productTitle
             destenation.productID = self.productID
             destenation.isFavorite = self.isFavorite
@@ -142,6 +154,30 @@ class Home: UIViewController {
             }))
             self.present(alert, animated: true, completion: nil)
         }
+    }
+    
+    @objc fileprivate func cartCounter(){
+        cartApi.cartCountApi { (error: Error?, cartData: [productsModel]?) in
+            if let cartCounter = cartData{
+                self.cart = cartCounter
+                print("caaarrrt: \(self.cart.count)")
+            }
+        }
+    }
+    
+    func addBadge() {
+        let bagButton = BadgeButton()
+        bagButton.frame = CGRect(x: 0, y: 0, width: 44, height: 44)
+        bagButton.tintColor = UIColor.white
+        bagButton.setImage(UIImage(named: "cart"), for: .normal)
+        bagButton.badgeEdgeInsets = UIEdgeInsets(top: 20, left: 0, bottom: 0, right: 15)
+        bagButton.badge = "\(cart.count)"
+        bagButton.addTarget(self, action: #selector(self.cartTaped), for: UIControl.Event.touchUpInside)
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: bagButton)
+    }
+    
+    @objc func cartTaped(){
+        self.performSegue(withIdentifier: "cart", sender: nil)
     }
     
     @IBAction func firstViewBtn(_ sender: Any) {
@@ -200,7 +236,8 @@ extension Home: UICollectionViewDelegate, UICollectionViewDataSource, UICollecti
         if collectionView == self.serviceCollectionView{
             self.productDescription = latestProduct[indexPath.item].shortDescription
             self.productShortDescription = latestProduct[indexPath.item].productDescription
-            self.productPrice = latestProduct[indexPath.item].price
+            self.productGeneralPrice = latestProduct[indexPath.item].price
+            self.productPrice = latestProduct[indexPath.item].salePrice
             self.productTitle = latestProduct[indexPath.item].title
             self.productID = latestProduct[indexPath.item].id
             self.isFavorite = latestProduct[indexPath.item].isFavorite
@@ -210,7 +247,8 @@ extension Home: UICollectionViewDelegate, UICollectionViewDataSource, UICollecti
         if collectionView == self.productCollectionView{
             self.productDescription = featureProduct[indexPath.item].shortDescription
             self.productShortDescription = featureProduct[indexPath.item].productDescription
-            self.productPrice = featureProduct[indexPath.item].price
+            self.productGeneralPrice = featureProduct[indexPath.item].price
+            self.productPrice = featureProduct[indexPath.item].salePrice
             self.productTitle = featureProduct[indexPath.item].title
             self.productID = featureProduct[indexPath.item].id
             self.isFavorite = featureProduct[indexPath.item].isFavorite
@@ -233,11 +271,11 @@ extension Home: UICollectionViewDelegate, UICollectionViewDataSource, UICollecti
         
     }
     
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        if scrollView.tag == 0{
-        currentIndex = Int(scrollView.contentOffset.x / topCollectionView.frame.size.width)
-        pageControl.currentPage = currentIndex
-        }
-    }
+//    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+//        if scrollView.tag == 0{
+//        currentIndex = Int(scrollView.contentOffset.x / topCollectionView.frame.size.width)
+//        pageControl.currentPage = currentIndex
+//        }
+//    }
     
 }

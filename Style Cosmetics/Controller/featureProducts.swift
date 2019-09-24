@@ -14,15 +14,19 @@ class featureProducts: UIViewController {
     var productDescription = String()
     var productShortDescription = String()
     var productPrice = String()
+    var productGeneralPrice = String()
     var productTitle = String()
     var productID = Int()
     var isFavorite = Int()
     var rate = Double()
     
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var collectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        activityIndicator.isHidden = true
         
         self.navigationController?.navigationBar.barTintColor = UIColor.gray
         self.navigationController?.navigationBar.topItem?.title = NSLocalizedString("Feature Products", comment: "")
@@ -35,11 +39,15 @@ class featureProducts: UIViewController {
     }
 
     @objc fileprivate func latestHandleRefresh() {
+        self.activityIndicator.isHidden = false
+        self.activityIndicator.startAnimating()
         homeApi.featuredProducts { (error: Error?, photo: [productsModel]?) in
             if let photos = photo {
                 self.featureProduct = photos
                 self.collectionView.reloadData()
             }
+            self.activityIndicator.stopAnimating()
+            self.activityIndicator.isHidden = true
         }
     }
     
@@ -48,6 +56,7 @@ class featureProducts: UIViewController {
             destenation.productDescription = self.productDescription
             destenation.productShortDescription = self.productShortDescription
             destenation.productPrice = self.productPrice
+            destenation.productGeneralPrice = self.productGeneralPrice
             destenation.productTitle = self.productTitle
             destenation.productID = self.productID
             destenation.isFavorite = self.isFavorite
@@ -72,7 +81,8 @@ extension featureProducts: UICollectionViewDelegate, UICollectionViewDataSource,
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         self.productDescription = featureProduct[indexPath.item].shortDescription
         self.productShortDescription = featureProduct[indexPath.item].productDescription
-        self.productPrice = featureProduct[indexPath.item].price
+        self.productGeneralPrice = featureProduct[indexPath.item].price
+        self.productPrice = featureProduct[indexPath.item].salePrice
         self.productTitle = featureProduct[indexPath.item].title
         self.productID = featureProduct[indexPath.item].id
         self.isFavorite = featureProduct[indexPath.item].isFavorite

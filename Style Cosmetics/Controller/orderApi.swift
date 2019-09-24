@@ -48,7 +48,7 @@ class orderApi: NSObject {
     
     class func orderListApi (completion: @escaping(_ error: Error?, _ data: [productsModel]?)-> Void){
         let parametars = [
-            "lang": "en"
+            "lang": NSLocalizedString("en", comment: "")
             ]
         let header = [
             "Accept": "application/json",

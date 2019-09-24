@@ -11,5 +11,6 @@ target 'Style Cosmetics' do
   pod 'SwiftyJSON'
   pod 'Kingfisher'
   pod 'MOLH'
+  pod 'IQKeyboardManagerSwift'
 
 end

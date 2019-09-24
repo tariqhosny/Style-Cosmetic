@@ -105,8 +105,13 @@ class ProfileViewController: UIViewController {
             $0.placeholder = NSLocalizedString("Change Password", comment: "")
             $0.textAlignment = .left
         })
+//        alert.addTextField(configurationHandler: {
+//            $0.isSecureTextEntry = true
+//            $0.placeholder = NSLocalizedString("New Password", comment: "")
+//            $0.textAlignment = .left
+//        })
         alert.addAction(UIAlertAction(title: NSLocalizedString("Edit", comment: ""), style: .destructive, handler: { (action: UIAlertAction) in
-            guard let title = alert.textFields?.first?.text, !title.isEmpty else {return}
+            guard let title = alert.textFields?[0].text, !title.isEmpty else {return}
             profileApi.updateProfileApi(name: "", email: "", phone: "", password: title, completion: { (error: Error?, message: String?) in
             })
         }))

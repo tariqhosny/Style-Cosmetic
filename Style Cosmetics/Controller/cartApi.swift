@@ -40,7 +40,7 @@ class cartApi: NSObject {
     
     class func listCartApi (completion: @escaping(_ error: Error?, _ data: [productsModel]?, _ totalPrice: Int?, _ taxs: Int?, _ deleveryFees: String?)-> Void){
         let parametars = [
-            "lang": "en"
+            "lang": NSLocalizedString("en", comment: "")
         ]
         let header = [
             "Accept": "application/json",
@@ -156,6 +156,44 @@ class cartApi: NSObject {
                 let json = JSON(value)
                 print(json)
                 completion(nil, true)
+            }
+        }
+    }
+    
+    class func cartCountApi (completion: @escaping(_ error: Error?, _ data: [productsModel]?)-> Void){
+        let parametars = [
+            "lang": NSLocalizedString("en", comment: "")
+        ]
+        let header = [
+            "Accept": "application/json",
+            "Authorization": "Bearer \(helper.getUserToken() ?? "")"
+        ]
+        Alamofire.request(URLs.cartList, method: .post, parameters: parametars, encoding: URLEncoding.default, headers: header).responseJSON { response in
+            switch response.result
+            {
+            case .failure(let error):
+                print(error)
+                completion(error, nil)
+                
+            case .success(let value):
+                let json = JSON(value)
+                print(json)
+                
+                guard let data = json["data"].dictionary else {
+                    completion(nil, nil)
+                    return
+                }
+                guard let list = data["list"]?.array else {
+                    completion(nil, nil)
+                    return
+                }
+                var cartData = [productsModel]()
+                list.forEach({
+                    if let dict = $0.dictionary, let product = productsModel(dict: dict) {
+                        cartData.append(product)
+                    }
+                })
+                completion(nil, cartData)
             }
         }
     }

@@ -74,18 +74,15 @@ class createOrder: UIViewController, CLLocationManagerDelegate {
         if (phone.isEmpty == true || address.isEmpty == true || country.isEmpty == true || city.isEmpty == true || street.isEmpty == true){
             self.displayErrors(errorText: NSLocalizedString("Empty Fields", comment: ""))
         }else {
-            let alert = UIAlertController(title: NSLocalizedString("complete your order", comment: ""), message: "", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: NSLocalizedString("Cancel", comment: ""), style: .cancel, handler: nil))
-            alert.addAction(UIAlertAction(title: NSLocalizedString("Ok", comment: ""), style: .destructive, handler: { (action: UIAlertAction) in
-                orderApi.createOrderApi(totalPrice: self.totalPrice, phone: phone, address: address, notes: notes, city: city, country: country, street: street, latidude: Float(self.userLat), langitude: Float(self.userLng), completion: { (error: Error?, success: Bool?) in
-                    if success == true{
+            orderApi.createOrderApi(totalPrice: self.totalPrice, phone: phone, address: address, notes: notes, city: city, country: country, street: street, latidude: Float(self.userLat), langitude: Float(self.userLng), completion: { (error: Error?, success: Bool?) in
+                if success == true{
+                    let alert = UIAlertController(title: NSLocalizedString("your order completed", comment: ""), message: "", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: NSLocalizedString("Ok", comment: ""), style: .destructive, handler: { (action: UIAlertAction) in
                         helper.restartApp()
-                    }else{
-                        
-                    }
-                })
-            }))
-            self.present(alert, animated: true, completion: nil)
+                    }))
+                    self.present(alert, animated: true, completion: nil)
+                }
+            })
         }
     }
     

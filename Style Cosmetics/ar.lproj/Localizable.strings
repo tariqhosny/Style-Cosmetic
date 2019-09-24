@@ -1,0 +1,57 @@
+/* 
+  Localizable.strings
+  Style Cosmetics
+
+  Created by Tariq on 8/20/19.
+  Copyright © 2019 user. All rights reserved.
+*/
+
+"Empty Fields" = "بعض الحقول فارغه";
+"login successfully" = "تم تسجيل الدخول بنجاح";
+"Email or Password incorrect" = "البريد الالكترونى او كلمه السر خطأ";
+"Message" = "رساله";
+"Dismiss" = "الغاء";
+"sign up successfully" = "تم التسجيل بنجاح";
+"Check your entered data" = "من فضلك قم بفحص البيانات المدخله";
+"Error" = "خطأ";
+"cart" = "العربه";
+"Please Login First" = "من فضلك تسجيل الدخول اولا";
+"Cancel" = "الغاء";
+"Login" = "تسجيل دخول";
+"Select Language" = "اختيار لغه";
+"Products" = "المنتجات";
+"Reviews" = "تقييمات";
+"Please Select Color" = "من فضلك اختر لون";
+"Ok" = "حسنا";
+"Total Price:" = "السعر الكلي";
+"Taxes:" = "الضرائب";
+"Delivery Fees:" = "مصاريف الشحن";
+"My Orders" = "طلباتي";
+"Order in Progress" = "الطلب تحت المراجعه";
+"Order Delivered" = "تم وصول الطلب";
+"Order Canceled" = "تم الغاء الطلب";
+"Cash on Delivered" = "الدفع عند الاستلام";
+"Very Bad" = "سيئ جدا";
+"Bad" = "سيئ";
+"Good" = "جيد";
+"Very Good" = "جيد جدا";
+"Exellent" = "ممتاز";
+"Please write Comment" = "رجاءا كتابه تعليق";
+"Edit Full Name" = "تعديل الاسم";
+"Change Full Name" = "تعديل الاسم";
+"Edit" = "تعديل";
+"Edit Phone Number" = "تعديل رقم التليفون";
+"Change Phone Number" = "تعديل رقم التليفون";
+"Edit Email" = "تعديل  البريد الاكترونى";
+"Change Email" = "تغيير البريد الاكترونى";
+"Edit Password" = "تعديل كلمه السر";
+"Change Password" = "تغيير كلمه السر";
+"Latest Products" = "المنتجات المضافه مؤخرا";
+"Feature Products" = "المنتجات المميزه";
+"complete your order" = "تكمله طلبك";
+"Price:" = "السعر:";
+"order:" = "الطلب:";
+"Are you sure you want to log out?" = "هل تريد تسجيل الحروج؟";
+"en" = "ar";
+"he" = "ar";
+"The password must be at least 6 characters" = "يجب على كلمه المرور الا تقل عن ٦ احرف";

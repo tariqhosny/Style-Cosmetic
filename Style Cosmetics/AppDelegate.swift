@@ -8,6 +8,7 @@
 
 import UIKit
 import MOLH
+import IQKeyboardManagerSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, MOLHResetable {
@@ -20,13 +21,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MOLHResetable {
         // Override point for customization after application launch.
         
         MOLH.shared.activate(true)
+        IQKeyboardManager.shared.enable = true
         
         if let user_token = helper.getUserToken(){
             print("user_token: \(user_token)")
             let tab = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "home")
             window?.rootViewController = tab
         }
-        
         return true
     }
     

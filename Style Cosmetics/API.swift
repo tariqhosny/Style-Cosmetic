@@ -41,7 +41,7 @@ class API: NSObject {
         }
     }
     
-    class func register(name: String, phone: String, email: String, password: String, completion: @escaping (_ error: Error?, _ success: Bool)-> Void){
+    class func register(name: String, phone: String, email: String, password: String, completion: @escaping (_ error: Error?, _ success: Bool, _ validationMessage: String)-> Void){
         let url = URLs.register
         
         let parametars = [
@@ -55,18 +55,24 @@ class API: NSObject {
             .responseJSON { response in
             switch response.result{
             case .failure(let error):
-                completion(error, false)
+                completion(error, false, "")
                 print(error)
             case .success(let value):
                 let json = JSON(value)
                 let status = json["status"].bool
                 if status == true{
-                    if let user_token = json["data"]["user_token "].string {
-                        completion(nil, true)
+                    if let user_token = json["data"]["user_token "].string{
+                        completion(nil, true, "")
                         helper.saveUserToken(token: user_token)
                     }
                 }else{
-                    completion(nil,false)
+                    if let validationMail = json["error"]["email"][0].string{
+                        completion(nil, false, validationMail)
+                    }
+                    else if let validationName = json["error"]["name"][0].string{
+                        completion(nil, false, validationName)
+                    }
+                    
                 }
             }
         }

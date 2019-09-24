@@ -18,6 +18,7 @@ class FavoriteViewController: UIViewController {
     var productDescription = String()
     var productShortDescription = String()
     var productPrice = String()
+    var productGeneralPrice = String()
     var productTitle = String()
     var productID = Int()
     var isFavorite = 1
@@ -65,6 +66,7 @@ class FavoriteViewController: UIViewController {
             destenation.productDescription = self.productDescription
             destenation.productShortDescription = self.productShortDescription
             destenation.productPrice = self.productPrice
+            destenation.productGeneralPrice = self.productGeneralPrice
             destenation.productTitle = self.productTitle
             destenation.productID = self.productID
             destenation.isFavorite = self.isFavorite
@@ -89,6 +91,7 @@ extension FavoriteViewController: UICollectionViewDelegate, UICollectionViewData
         self.productDescription = products[indexPath.item].shortDescription
         self.productShortDescription = products[indexPath.item].productDescription
         self.productPrice = products[indexPath.item].price
+        self.productGeneralPrice = products[indexPath.item].salePrice
         self.productTitle = products[indexPath.item].productName1
         self.productID = Int(products[indexPath.item].productID1) ?? 0
         self.rate = products[indexPath.item].rateAvrg

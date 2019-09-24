@@ -17,6 +17,7 @@ class SingleProductDetail: UIViewController {
     var productDescription = String()
     var productShortDescription = String()
     var productPrice = String()
+    var productGeneralPrice = String()
     var productTitle = String()
     var productID = Int()
     var isFavorite = Int()
@@ -30,6 +31,7 @@ class SingleProductDetail: UIViewController {
     @IBOutlet weak var colorCollectionView: UICollectionView!
     @IBOutlet weak var descriptionLbl: UILabel!
     @IBOutlet weak var priceLbl: UILabel!
+    @IBOutlet weak var generalPrice: UILabel!
     @IBOutlet weak var shortDescription: UILabel!
     @IBOutlet weak var favoriteOutlet: UIButton!
     @IBOutlet weak var reviewsCount: UILabel!
@@ -59,8 +61,9 @@ class SingleProductDetail: UIViewController {
         self.navigationItem.title = productTitle
         
         self.descriptionLbl.text = productShortDescription
-        self.shortDescription.text = productDescription
+        self.shortDescription.text = productTitle
         self.priceLbl.text = productPrice
+        self.generalPrice.text = productGeneralPrice
         
         
         if isFavorite == 1{
@@ -221,7 +224,7 @@ extension SingleProductDetail : UITableViewDelegate, UITableViewDataSource, UICo
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if collectionView.tag == 0{
-            return CGSize.init(width: collectionView.frame.size.width-60, height: collectionView.frame.height)
+            return CGSize.init(width: collectionView.frame.size.width, height: collectionView.frame.height)
         }else {
             return CGSize.init(width: 50, height: 50)
         }

@@ -9,9 +9,9 @@
 import Foundation
 
 struct URLs {
-    static let baseURL = "http://titco-industry.com/api/"
+    static let baseURL = "http://digitaltouchs.com/api/"
     //main
-    static let file_root = "http://titco-industry.com"
+    static let file_root = "http://digitaltouchs.com"
     //post login(email, password)
     static let login = baseURL + "login"
     //post register(name, phone, email, password)
@@ -60,4 +60,6 @@ struct URLs {
     static let profile = baseURL + "user_profile"
     //post update_profile(phone, name, email, password)
     static let updateProfile = baseURL + "update_profile"
+    //post privacies(lang)
+    static let privacies = baseURL + "privacies"
 }

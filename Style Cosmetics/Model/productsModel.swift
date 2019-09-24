@@ -14,6 +14,7 @@ class productsModel: NSObject {
     var photo: String
     var title: String
     var price: String
+    var salePrice: String
     var productDescription: String
     var shortDescription: String
     var id: Int
@@ -74,6 +75,12 @@ class productsModel: NSObject {
             self.price = price
         }else {
             self.price = ""
+        }
+        
+        if let salePrice = dict["sale_price"]?.string {
+            self.salePrice = salePrice
+        }else {
+            self.salePrice = ""
         }
         
         if let description = dict["description"]?.string {
@@ -267,7 +274,7 @@ class productsModel: NSObject {
             self.customerPhone = ""
         }
         
-        if let customerEmail = dict["email;"]?.string{
+        if let customerEmail = dict["email"]?.string{
             self.customerEmail = customerEmail
         }else{
             self.customerEmail = ""

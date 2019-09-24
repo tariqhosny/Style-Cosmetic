@@ -15,7 +15,7 @@ class homeApi: NSObject {
 
     class func sliderPhotos (completion: @escaping(_ error: Error?, _ photos: [sliderModel]?)-> Void){
         let parametars = [
-            "lang": "en"
+            "lang": NSLocalizedString("en", comment: "")
         ]
         let header = [
             "Content-Type": "application/x-www-form-urlencoded"
@@ -51,7 +51,7 @@ class homeApi: NSObject {
     
     class func latestProducts (completion: @escaping(_ error: Error?, _ photos: [productsModel]?)-> Void){
         let parametars = [
-            "lang": "en"
+            "lang": NSLocalizedString("en", comment: "")
         ]
         let header = [
             "Accept": "application/json",
@@ -87,7 +87,7 @@ class homeApi: NSObject {
     
     class func featuredProducts (completion: @escaping(_ error: Error?, _ photos: [productsModel]?)-> Void){
         let parametars = [
-            "lang": "ar"
+            "lang": NSLocalizedString("en", comment: "")
         ]
         let header = [
             "Accept": "application/json",

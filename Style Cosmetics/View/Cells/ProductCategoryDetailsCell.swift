@@ -16,7 +16,11 @@ class ProductCategoryDetailsCell: UICollectionViewCell {
     
     func configureCell(product: productsModel) {
         productDetailDes.text = product.title
-        productDetailPrice.text = product.price
+        if product.salePrice == "" {
+            productDetailPrice.text = product.price
+        }else{
+            productDetailPrice.text = product.salePrice
+        }
         let urlWithoutEncoding = ("\(URLs.file_root)\(product.photo)")
         let encodedLink = urlWithoutEncoding.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed)
         let encodedURL = NSURL(string: encodedLink!)! as URL

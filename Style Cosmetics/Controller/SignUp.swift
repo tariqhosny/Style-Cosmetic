@@ -10,7 +10,7 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 
-class SignUp: UIViewController {
+class SignUp: UIViewController, UITextFieldDelegate {
     
     
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
@@ -23,6 +23,7 @@ class SignUp: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        nameTF.delegate = self
         activityIndicator.isHidden = true
         
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
@@ -36,20 +37,35 @@ class SignUp: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
         // Do any additional setup after loading the view.
     }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        do {
+            let regex = try NSRegularExpression(pattern: ".*[^A-Za-z ].*", options: [])
+            if regex.firstMatch(in: string, options: [], range: NSMakeRange(0, string.count)) != nil {
+                return false
+            }
+        }
+        catch {
+            print("ERROR")
+        }
+        return true
+    }
 
     @IBAction func signUp(_ sender: UIButton) {
         
         guard let name = nameTF.text, let phone = phoneTF.text, let email = emailTF.text, let password = passwordTF.text else {return}
         if (email.isEmpty == true || password.isEmpty == true || name.isEmpty == true || phone.isEmpty == true){
             self.displayErrors(errorText: NSLocalizedString("Empty Fields", comment: ""))
+        }else if password.count < 6 {
+            self.displayErrors(errorText: NSLocalizedString("The password must be at least 6 characters", comment: ""))
         }else {
             self.activityIndicator.isHidden = false
             self.activityIndicator.startAnimating()
-            API.register(name: name, phone: phone, email: email, password: password) { (error: Error?, success: Bool) in
+            API.register(name: name, phone: phone, email: email, password: password) { (error: Error?, success: Bool, validation: String) in
                 if success {
                     print("sign up successfully")
                 }else{
-                    self.displayErrors(errorText: NSLocalizedString("Check your entered data", comment: ""))
+                    self.displayErrors(errorText: validation)
                 }
                 self.activityIndicator.stopAnimating()
                 self.activityIndicator.isHidden = true

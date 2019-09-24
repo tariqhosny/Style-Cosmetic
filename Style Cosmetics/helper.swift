@@ -22,6 +22,10 @@ class helper: NSObject {
         return defUser.value(forKey: "user_token") as? String
     }
     
+    class func SaveLang(lang: String) {
+        
+    }
+    
     class func restartApp(){
         guard let window = UIApplication.shared.keyWindow else {return}
         let sb = UIStoryboard(name: "Main", bundle: nil)

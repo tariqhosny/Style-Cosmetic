@@ -75,4 +75,37 @@ class profileApi: NSObject {
             }
         }
     }
+    
+    //privacies
+    class func privacyApi (completion: @escaping(_ error: Error?, _ data: [productsModel]?)-> Void){
+        let parametars = [
+            "lang" : NSLocalizedString("en", comment: "")
+        ]
+        Alamofire.request(URLs.privacies, method: .post, parameters: parametars, encoding: URLEncoding.default, headers: nil).responseJSON { response in
+            switch response.result
+            {
+            case .failure(let error):
+                print(error)
+                completion(error, nil)
+                
+            case .success(let value):
+                let json = JSON(value)
+                print(json)
+                
+                guard let data = json["data"].array else {
+                    completion(nil, nil)
+                    return
+                }
+                print(data)
+                var orderData = [productsModel]()
+                data.forEach({
+                    if let dict = $0.dictionary, let product = productsModel(dict: dict) {
+                        orderData.append(product)
+                    }
+                })
+                completion(nil, orderData)
+            }
+        }
+    }
+    
 }

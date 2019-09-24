@@ -17,15 +17,16 @@
 		520C7F9222EEE8F200BEBC7D /* latestProducts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520C7F9122EEE8F200BEBC7D /* latestProducts.swift */; };
 		520C7F9422EEE90A00BEBC7D /* featureProducts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520C7F9322EEE90A00BEBC7D /* featureProducts.swift */; };
 		520C7F9C22F08D0D00BEBC7D /* cartApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520C7F9B22F08D0D00BEBC7D /* cartApi.swift */; };
-		520C7F9E22F0933900BEBC7D /* selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 520C7F9D22F0933900BEBC7D /* selected.png */; };
 		5211645E22DF23AF008AC521 /* textViewRound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5211645D22DF23AF008AC521 /* textViewRound.swift */; };
 		5211646222DF5172008AC521 /* singleProductDetailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5211646122DF5172008AC521 /* singleProductDetailsCell.swift */; };
 		5211646422DF5C41008AC521 /* singleProductDetailsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5211646322DF5C41008AC521 /* singleProductDetailsCollectionViewCell.swift */; };
 		521AF23D22DB810900D9E6DE /* HomeTopCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521AF23C22DB810900D9E6DE /* HomeTopCollectionViewCell.swift */; };
+		522AB97E233398D1006A018F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF3523722C0DC2600ECD001 /* AppDelegate.swift */; };
+		522AB98023339923006A018F /* BadgeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522AB97F23339923006A018F /* BadgeButton.swift */; };
+		523E6D1E23324DAE0017B0ED /* privacy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523E6D1D23324DAE0017B0ED /* privacy.swift */; };
 		52559DF622F8420200BE5391 /* createOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52559DF522F8420200BE5391 /* createOrder.swift */; };
 		5267E82122E856EF00B5EC65 /* homeApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5267E82022E856EF00B5EC65 /* homeApi.swift */; };
 		5267E82422E857C900B5EC65 /* sliderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5267E82322E857C900B5EC65 /* sliderModel.swift */; };
-		5267E82922E864EF00B5EC65 /* placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 5267E82822E864EF00B5EC65 /* placeholder.png */; };
 		52820555230C444A00CDF659 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 52820557230C444A00CDF659 /* Localizable.strings */; };
 		5282055A230D4F3800CDF659 /* profileApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52820559230D4F3800CDF659 /* profileApi.swift */; };
 		528C71DC22F1F32100E14789 /* favoriteApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528C71DB22F1F32100E14789 /* favoriteApi.swift */; };
@@ -56,7 +57,6 @@
 		CEDD931C22C25C1800278FDD /* HomeServicesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDD931B22C25C1800278FDD /* HomeServicesCell.swift */; };
 		CEDD931E22C25E4900278FDD /* HomeProductsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDD931D22C25E4900278FDD /* HomeProductsCell.swift */; };
 		CEDD932022C2737200278FDD /* Cart.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDD931F22C2737200278FDD /* Cart.swift */; };
-		CEF3523822C0DC2600ECD001 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF3523722C0DC2600ECD001 /* AppDelegate.swift */; };
 		CEF3523A22C0DC2600ECD001 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF3523922C0DC2600ECD001 /* Login.swift */; };
 		CEF3523D22C0DC2600ECD001 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEF3523B22C0DC2600ECD001 /* Main.storyboard */; };
 		CEF3523F22C0DC2700ECD001 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEF3523E22C0DC2700ECD001 /* Assets.xcassets */; };
@@ -78,15 +78,18 @@
 		520C7F9122EEE8F200BEBC7D /* latestProducts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = latestProducts.swift; sourceTree = "<group>"; };
 		520C7F9322EEE90A00BEBC7D /* featureProducts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = featureProducts.swift; sourceTree = "<group>"; };
 		520C7F9B22F08D0D00BEBC7D /* cartApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = cartApi.swift; path = "Style Cosmetics/Controller/cartApi.swift"; sourceTree = SOURCE_ROOT; };
-		520C7F9D22F0933900BEBC7D /* selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = selected.png; sourceTree = "<group>"; };
 		5211645D22DF23AF008AC521 /* textViewRound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = textViewRound.swift; sourceTree = "<group>"; };
 		5211646122DF5172008AC521 /* singleProductDetailsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = singleProductDetailsCell.swift; sourceTree = "<group>"; };
 		5211646322DF5C41008AC521 /* singleProductDetailsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = singleProductDetailsCollectionViewCell.swift; sourceTree = "<group>"; };
 		521AF23C22DB810900D9E6DE /* HomeTopCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTopCollectionViewCell.swift; sourceTree = "<group>"; };
+		522AB97F23339923006A018F /* BadgeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeButton.swift; sourceTree = "<group>"; };
+		523E6D1D23324DAE0017B0ED /* privacy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = privacy.swift; sourceTree = "<group>"; };
+		5243715F2330FE3800C74D5F /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Main.strings; sourceTree = "<group>"; };
+		524371602330FE3C00C74D5F /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		524371612330FE4100C74D5F /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
 		52559DF522F8420200BE5391 /* createOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = createOrder.swift; sourceTree = "<group>"; };
 		5267E82022E856EF00B5EC65 /* homeApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = homeApi.swift; path = "Style Cosmetics/homeApi.swift"; sourceTree = SOURCE_ROOT; };
 		5267E82322E857C900B5EC65 /* sliderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sliderModel.swift; sourceTree = "<group>"; };
-		5267E82822E864EF00B5EC65 /* placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder.png; sourceTree = "<group>"; };
 		52820556230C444A00CDF659 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		52820558230C445200CDF659 /* he */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = he; path = he.lproj/Localizable.strings; sourceTree = "<group>"; };
 		52820559230D4F3800CDF659 /* profileApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = profileApi.swift; path = "Style Cosmetics/profileApi.swift"; sourceTree = SOURCE_ROOT; };
@@ -231,10 +234,10 @@
 				CEDD930B22C24E1400278FDD /* SignUp.swift */,
 				CEDD930D22C24E9700278FDD /* Home.swift */,
 				CEDD930F22C2504B00278FDD /* More.swift */,
-				CEDD931122C251EA00278FDD /* Products.swift */,
 				CEDD931322C252B100278FDD /* ProductCategoryDetails.swift */,
 				CEDD931522C2530500278FDD /* SingleProductDetail.swift */,
 				CEDD931F22C2737200278FDD /* Cart.swift */,
+				CEDD931122C251EA00278FDD /* Products.swift */,
 				CEFC4FDB22C38C3400140BFD /* MyOrders.swift */,
 				CEFC4FDD22C38C4C00140BFD /* MyOrdersDetail.swift */,
 				CEA9B17422CA9B7C00FCBEBD /* myOrdersRate.swift */,
@@ -243,6 +246,7 @@
 				520C7F9122EEE8F200BEBC7D /* latestProducts.swift */,
 				520C7F9322EEE90A00BEBC7D /* featureProducts.swift */,
 				52559DF522F8420200BE5391 /* createOrder.swift */,
+				523E6D1D23324DAE0017B0ED /* privacy.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -279,9 +283,8 @@
 				52820557230C444A00CDF659 /* Localizable.strings */,
 				CEF3523E22C0DC2700ECD001 /* Assets.xcassets */,
 				CEF3524022C0DC2700ECD001 /* LaunchScreen.storyboard */,
-				5267E82822E864EF00B5EC65 /* placeholder.png */,
-				520C7F9D22F0933900BEBC7D /* selected.png */,
 				CEF3524322C0DC2700ECD001 /* Info.plist */,
+				522AB97F23339923006A018F /* BadgeButton.swift */,
 			);
 			path = "Style Cosmetics";
 			sourceTree = "<group>";
@@ -341,6 +344,7 @@
 				en,
 				Base,
 				he,
+				ar,
 			);
 			mainGroup = CEF3522B22C0DC2600ECD001;
 			productRefGroup = CEF3523522C0DC2600ECD001 /* Products */;
@@ -359,9 +363,7 @@
 			files = (
 				CEF3524222C0DC2700ECD001 /* LaunchScreen.storyboard in Resources */,
 				52820555230C444A00CDF659 /* Localizable.strings in Resources */,
-				5267E82922E864EF00B5EC65 /* placeholder.png in Resources */,
 				CEF3523F22C0DC2700ECD001 /* Assets.xcassets in Resources */,
-				520C7F9E22F0933900BEBC7D /* selected.png in Resources */,
 				CEF3523D22C0DC2600ECD001 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -432,7 +434,6 @@
 				52559DF622F8420200BE5391 /* createOrder.swift in Sources */,
 				CEA9B17722CAA7D000FCBEBD /* ProfileViewController.swift in Sources */,
 				528FAA9B22E75EFC0031E586 /* Config.swift in Sources */,
-				CEF3523822C0DC2600ECD001 /* AppDelegate.swift in Sources */,
 				CEDD931E22C25E4900278FDD /* HomeProductsCell.swift in Sources */,
 				CEDD931622C2530500278FDD /* SingleProductDetail.swift in Sources */,
 				CEA9B17522CA9B7C00FCBEBD /* myOrdersRate.swift in Sources */,
@@ -449,6 +450,7 @@
 				5207755322FB053B007708AA /* imageRound.swift in Sources */,
 				528FAA9922E75D380031E586 /* API.swift in Sources */,
 				520C7F9222EEE8F200BEBC7D /* latestProducts.swift in Sources */,
+				523E6D1E23324DAE0017B0ED /* privacy.swift in Sources */,
 				5282055A230D4F3800CDF659 /* profileApi.swift in Sources */,
 				520C7F9C22F08D0D00BEBC7D /* cartApi.swift in Sources */,
 				CEDD931822C258F500278FDD /* ProductCell.swift in Sources */,
@@ -465,7 +467,9 @@
 				CEDD930E22C24E9700278FDD /* Home.swift in Sources */,
 				CEDD932022C2737200278FDD /* Cart.swift in Sources */,
 				521AF23D22DB810900D9E6DE /* HomeTopCollectionViewCell.swift in Sources */,
+				522AB98023339923006A018F /* BadgeButton.swift in Sources */,
 				5297601222F979570091B8CF /* orderApi.swift in Sources */,
+				522AB97E233398D1006A018F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -477,6 +481,7 @@
 			children = (
 				52820556230C444A00CDF659 /* en */,
 				52820558230C445200CDF659 /* he */,
+				524371612330FE4100C74D5F /* ar */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -486,6 +491,7 @@
 			children = (
 				CEF3523C22C0DC2600ECD001 /* Base */,
 				528E222D230C1E4900C42E2C /* he */,
+				5243715F2330FE3800C74D5F /* ar */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -495,6 +501,7 @@
 			children = (
 				CEF3524122C0DC2700ECD001 /* Base */,
 				528E222B230C13AD00C42E2C /* he */,
+				524371602330FE3C00C74D5F /* ar */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -625,18 +632,20 @@
 			baseConfigurationReference = D71926021429E2C9FA29B2DB /* Pods-Style Cosmetics.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = W3Z4392KVG;
+				DEVELOPMENT_TEAM = 4Z34DQ34UQ;
 				INFOPLIST_FILE = "Style Cosmetics/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "tariq.Style-Cosmetics";
+				PRODUCT_BUNDLE_IDENTIFIER = "tariq.Style-Cosmetic";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -645,18 +654,20 @@
 			baseConfigurationReference = 7B153502FF1EF05C01A5EDB4 /* Pods-Style Cosmetics.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = W3Z4392KVG;
+				DEVELOPMENT_TEAM = 4Z34DQ34UQ;
 				INFOPLIST_FILE = "Style Cosmetics/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "tariq.Style-Cosmetics";
+				PRODUCT_BUNDLE_IDENTIFIER = "tariq.Style-Cosmetic";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

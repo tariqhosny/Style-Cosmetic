@@ -328,3 +328,9 @@
 
 /* Class = "UITextField"; placeholder = "Phone"; ObjectID = "zdL-Ta-Y2Y"; */
 "zdL-Ta-Y2Y.placeholder" = "מכשיר טלפון";
+
+/* Class = "UILabel"; text = "Privacy & Policies"; ObjectID = "RRU-oe-Ftc"; */
+"RRU-oe-Ftc.text" = "פרטיות ומדיניות";
+
+/* Class = "UIButton"; normalTitle = "Privacy & Policies"; ObjectID = "Siy-Ar-XFS"; */
+"Siy-Ar-XFS.normalTitle" = "פרטיות ומדיניות";

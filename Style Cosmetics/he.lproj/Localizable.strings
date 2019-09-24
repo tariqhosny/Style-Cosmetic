@@ -25,12 +25,12 @@
 "Ok" = "בסדר";
 "Total Price:" = "מחיר סופי:";
 "Taxes:" = "מיסים:";
-"Delevery Fees:" = "דמי משלוח:";
+"Delivery Fees:" = "דמי משלוח:";
 "My Orders" = "ההזמנות שלי";
 "Order in Progress" = "סדר בתהליך";
-"Order Delevered" = "ההזמנה הועברה";
+"Order Delivered" = "ההזמנה הועברה";
 "Order Canceled" = "ההזמנה בוטלה";
-"Cash on Delevered" = "מזומנים שנמסרו";
+"Cash on Delivered" = "מזומנים שנמסרו";
 "Very Bad" = "רע מאוד";
 "Bad" = "רע";
 "Good" = "טוב";
@@ -51,3 +51,7 @@
 "complete your order" = "השלם את ההזמנה שלך";
 "Price:" = "מחיר:";
 "order:" = "להזמין:";
+"Are you sure you want to log out?" = "האם אתה בטוח שברצונך להתנתק?";
+"en" = "he";
+"ar" = "he";
+"The password must be at least 6 characters" = "הסיסמה חייבת לכלול לפחות 6 תווים";

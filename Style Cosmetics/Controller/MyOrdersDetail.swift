@@ -43,10 +43,10 @@ class MyOrdersDetail: UIViewController {
         OrderDetailsHandleRefresh()
         
         self.customerAddress.text = address
-        self.paymentState.text = NSLocalizedString("Cash on Delevered", comment: "")
+        self.paymentState.text = NSLocalizedString("Cash on Delivered", comment: "")
         self.totalPrice.text = NSLocalizedString("Total Price:", comment: "") + " $" + orderPrice
         self.taxsLb.text = NSLocalizedString("Taxes:", comment: "") + " $\(taxs)"
-        self.deleveryFeesLb.text = NSLocalizedString("Delevery Fees:", comment: "") + " $" + deleveryFees
+        self.deleveryFeesLb.text = NSLocalizedString("Delivery Fees:", comment: "") + " $" + deleveryFees
         
     }
     
