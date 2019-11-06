@@ -175,6 +175,12 @@ class SingleProductDetail: UIViewController {
         }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destenation = segue.destination as? imagesViewer{
+            destenation.productID = self.productID
+        }
+    }
+    
     var selectedRow = -1
     
 }
@@ -231,7 +237,12 @@ extension SingleProductDetail : UITableViewDelegate, UITableViewDataSource, UICo
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if collectionView == colorCollectionView {
             self.colorID = productColors[indexPath.item].colorID
+        }
+        if collectionView == self.collectionView{
+            performSegue(withIdentifier: "images", sender: nil)
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {

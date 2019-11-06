@@ -55,3 +55,9 @@
 "en" = "he";
 "ar" = "he";
 "The password must be at least 6 characters" = "הסיסמה חייבת לכלול לפחות 6 תווים";
+"Faild" = "נכשל";
+"Please select the payment method" = "בחר את אמצעי התשלום";
+"Congratulation!" = "מזל טוב!";
+"Your order done" = "ההזמנה שלך בוצעה";
+"payment Failed" = "התשלום נכשל";
+"Payment Online" = "תשלום מקוון";

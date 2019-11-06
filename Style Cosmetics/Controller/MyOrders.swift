@@ -20,6 +20,7 @@ class MyOrders: UIViewController {
     var taxs = Int()
     var orderState = String()
     var address = String()
+    var paymentMethod = String()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,6 +69,7 @@ class MyOrders: UIViewController {
             destenation.taxs = self.taxs
             destenation.orderState = self.orderState
             destenation.address = self.address
+            destenation.paymentMethod = self.paymentMethod
         }
     }
 }
@@ -101,6 +103,12 @@ extension MyOrders : UITableViewDelegate, UITableViewDataSource{
             self.orderState = NSLocalizedString("Order Canceled", comment: "")
         }
         
+        if Int(products[indexPath.item].payment_method) == 1{
+            self.paymentMethod = "Payment Online".localized
+        }
+        if Int(products[indexPath.item].payment_method) == 2{
+            self.paymentMethod = "Cash on Delivered".localized
+        }
         performSegue(withIdentifier: "segue", sender: nil)
     }
 }

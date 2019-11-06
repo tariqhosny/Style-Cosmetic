@@ -49,6 +49,7 @@ class productsModel: NSObject {
     var customerName: String
     var customerPhone: String
     var customerEmail: String
+    var payment_method: String
     
     
     init?(dict:[String: JSON]){
@@ -278,6 +279,12 @@ class productsModel: NSObject {
             self.customerEmail = customerEmail
         }else{
             self.customerEmail = ""
+        }
+        
+        if let payment_method = dict["payment_method"]?.string{
+            self.payment_method = payment_method
+        }else{
+            self.payment_method = ""
         }
     }
 }

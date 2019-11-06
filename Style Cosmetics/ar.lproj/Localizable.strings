@@ -55,3 +55,9 @@
 "en" = "ar";
 "he" = "ar";
 "The password must be at least 6 characters" = "يجب على كلمه المرور الا تقل عن ٦ احرف";
+"payment Failed" = "فشل عمليه الدفع";
+"Congratulation!" = "مبروك";
+"Your order done" = "تم اتمام الطلب";
+"Faild" = "خطأ";
+"Please select the payment method" = "الرجاء اختيار طريقة الدفع";
+"Payment Online" = "الدفع ببطاقه الائتمان";

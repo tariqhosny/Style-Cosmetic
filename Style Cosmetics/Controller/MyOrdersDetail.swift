@@ -25,13 +25,11 @@ class MyOrdersDetail: UIViewController {
     var orderState = String()
     var address = String()
     var productID = Int()
+    var paymentMethod = String()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        tableView.dataSource = self
-        tableView.delegate = self
-        
         // Clear the navigation bar
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
@@ -40,10 +38,13 @@ class MyOrdersDetail: UIViewController {
         self.navigationController?.navigationBar.barTintColor = UIColor.gray
         self.navigationController?.navigationBar.topItem?.title = " "
         
+        tableView.dataSource = self
+        tableView.delegate = self
+        
         OrderDetailsHandleRefresh()
         
         self.customerAddress.text = address
-        self.paymentState.text = NSLocalizedString("Cash on Delivered", comment: "")
+        self.paymentState.text = paymentMethod
         self.totalPrice.text = NSLocalizedString("Total Price:", comment: "") + " $" + orderPrice
         self.taxsLb.text = NSLocalizedString("Taxes:", comment: "") + " $\(taxs)"
         self.deleveryFeesLb.text = NSLocalizedString("Delivery Fees:", comment: "") + " $" + deleveryFees

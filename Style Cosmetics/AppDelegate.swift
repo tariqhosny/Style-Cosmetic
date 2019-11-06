@@ -61,4 +61,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MOLHResetable {
 
 
 }
-
+extension String{
+    var localized: String{
+        NSLocalizedString(self, comment: "")
+    }
+}

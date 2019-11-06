@@ -27,12 +27,15 @@
 		52559DF622F8420200BE5391 /* createOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52559DF522F8420200BE5391 /* createOrder.swift */; };
 		5267E82122E856EF00B5EC65 /* homeApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5267E82022E856EF00B5EC65 /* homeApi.swift */; };
 		5267E82422E857C900B5EC65 /* sliderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5267E82322E857C900B5EC65 /* sliderModel.swift */; };
+		52769B4D234E0DD1000C94E5 /* imagesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52769B4C234E0DD1000C94E5 /* imagesCell.swift */; };
+		52769B4F234E0E1B000C94E5 /* imagesViewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52769B4E234E0E1B000C94E5 /* imagesViewer.swift */; };
 		52820555230C444A00CDF659 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 52820557230C444A00CDF659 /* Localizable.strings */; };
 		5282055A230D4F3800CDF659 /* profileApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52820559230D4F3800CDF659 /* profileApi.swift */; };
 		528C71DC22F1F32100E14789 /* favoriteApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528C71DB22F1F32100E14789 /* favoriteApi.swift */; };
 		528FAA9922E75D380031E586 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528FAA9822E75D370031E586 /* API.swift */; };
 		528FAA9B22E75EFC0031E586 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528FAA9A22E75EFC0031E586 /* Config.swift */; };
 		528FAA9F22E7766F0031E586 /* helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528FAA9E22E7766F0031E586 /* helper.swift */; };
+		5293449123701E3900AAB058 /* paymentWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5293449023701E3800AAB058 /* paymentWebView.swift */; };
 		5297601222F979570091B8CF /* orderApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5297601122F979570091B8CF /* orderApi.swift */; };
 		52AA56E622DDD6A1002616B6 /* segmentedRound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AA56E522DDD6A1002616B6 /* segmentedRound.swift */; };
 		52AA56E822DE1F3C002616B6 /* viewRound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AA56E722DE1F3B002616B6 /* viewRound.swift */; };
@@ -90,6 +93,8 @@
 		52559DF522F8420200BE5391 /* createOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = createOrder.swift; sourceTree = "<group>"; };
 		5267E82022E856EF00B5EC65 /* homeApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = homeApi.swift; path = "Style Cosmetics/homeApi.swift"; sourceTree = SOURCE_ROOT; };
 		5267E82322E857C900B5EC65 /* sliderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sliderModel.swift; sourceTree = "<group>"; };
+		52769B4C234E0DD1000C94E5 /* imagesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = imagesCell.swift; sourceTree = "<group>"; };
+		52769B4E234E0E1B000C94E5 /* imagesViewer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = imagesViewer.swift; sourceTree = "<group>"; };
 		52820556230C444A00CDF659 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		52820558230C445200CDF659 /* he */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = he; path = he.lproj/Localizable.strings; sourceTree = "<group>"; };
 		52820559230D4F3800CDF659 /* profileApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = profileApi.swift; path = "Style Cosmetics/profileApi.swift"; sourceTree = SOURCE_ROOT; };
@@ -99,6 +104,7 @@
 		528FAA9822E75D370031E586 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = API.swift; path = "Style Cosmetics/API.swift"; sourceTree = SOURCE_ROOT; };
 		528FAA9A22E75EFC0031E586 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		528FAA9E22E7766F0031E586 /* helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = helper.swift; sourceTree = "<group>"; };
+		5293449023701E3800AAB058 /* paymentWebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = paymentWebView.swift; sourceTree = "<group>"; };
 		5297601122F979570091B8CF /* orderApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = orderApi.swift; path = "Style Cosmetics/Controller/orderApi.swift"; sourceTree = SOURCE_ROOT; };
 		52AA56E522DDD6A1002616B6 /* segmentedRound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = segmentedRound.swift; sourceTree = "<group>"; };
 		52AA56E722DE1F3B002616B6 /* viewRound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = viewRound.swift; sourceTree = "<group>"; };
@@ -182,6 +188,7 @@
 				520BCE0E22EA14B600FFB95D /* productColorCell.swift */,
 				520C7F8922EEE7E300BEBC7D /* featureProductsCell.swift */,
 				520C7F8B22EEE7FD00BEBC7D /* latestProductsCell.swift */,
+				52769B4C234E0DD1000C94E5 /* imagesCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -246,7 +253,9 @@
 				520C7F9122EEE8F200BEBC7D /* latestProducts.swift */,
 				520C7F9322EEE90A00BEBC7D /* featureProducts.swift */,
 				52559DF522F8420200BE5391 /* createOrder.swift */,
+				5293449023701E3800AAB058 /* paymentWebView.swift */,
 				523E6D1D23324DAE0017B0ED /* privacy.swift */,
+				52769B4E234E0E1B000C94E5 /* imagesViewer.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -418,12 +427,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEA9B17922CAB1A500FCBEBD /* FavoriteViewController.swift in Sources */,
+				52769B4F234E0E1B000C94E5 /* imagesViewer.swift in Sources */,
 				CEDD931022C2504B00278FDD /* More.swift in Sources */,
 				CEF3523A22C0DC2600ECD001 /* Login.swift in Sources */,
 				CEDD931A22C2599000278FDD /* ProductCategoryDetailsCell.swift in Sources */,
 				520C7F8C22EEE7FD00BEBC7D /* latestProductsCell.swift in Sources */,
 				CEFC4FDE22C38C4C00140BFD /* MyOrdersDetail.swift in Sources */,
 				520536EE22FC471300C8696C /* rateApi.swift in Sources */,
+				52769B4D234E0DD1000C94E5 /* imagesCell.swift in Sources */,
 				52AA56E822DE1F3C002616B6 /* viewRound.swift in Sources */,
 				CEDD931222C251EA00278FDD /* Products.swift in Sources */,
 				CEC66E3A22CB54350029929A /* CartCell.swift in Sources */,
@@ -437,6 +448,7 @@
 				CEDD931E22C25E4900278FDD /* HomeProductsCell.swift in Sources */,
 				CEDD931622C2530500278FDD /* SingleProductDetail.swift in Sources */,
 				CEA9B17522CA9B7C00FCBEBD /* myOrdersRate.swift in Sources */,
+				5293449123701E3900AAB058 /* paymentWebView.swift in Sources */,
 				520C7F9422EEE90A00BEBC7D /* featureProducts.swift in Sources */,
 				CEDD930A22C24D4100278FDD /* buttonRound.swift in Sources */,
 				5211646222DF5172008AC521 /* singleProductDetailsCell.swift in Sources */,
@@ -634,6 +646,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = 4Z34DQ34UQ;
 				INFOPLIST_FILE = "Style Cosmetics/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
@@ -656,6 +669,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = 4Z34DQ34UQ;
 				INFOPLIST_FILE = "Style Cosmetics/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
